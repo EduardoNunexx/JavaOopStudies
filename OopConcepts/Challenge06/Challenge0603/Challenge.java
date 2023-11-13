@@ -1,6 +1,6 @@
-package OopConcepts.Challenge0602;
-//this the scond part of the challenge 
-//Now u must to implement the maxSpeed attribute in the car class and validate if the currentSpeed are bigger than the maxSpeed value 
+package OopConcepts.Challenge06.Challenge0603;
+//this the third challenge part
+//Now you must to implement the attribute  and methods acces level in all classes 
 
 public class Challenge {
     public static void main(String[] args) {

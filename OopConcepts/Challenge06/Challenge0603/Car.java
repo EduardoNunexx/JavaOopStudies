@@ -1,4 +1,4 @@
-package OopConcepts.Challenge0603;
+package OopConcepts.Challenge06.Challenge0603;
 //implementing the acces level 
 public class Car {
     public int currentSpeed=0;
@@ -7,13 +7,13 @@ public class Car {
     Car(int MAX_SPEED){
         this.MAX_SPEED=MAX_SPEED;
     }
-    protected void accelerate(){
+    public void accelerate(){
         currentSpeed+=10;
         if(currentSpeed>MAX_SPEED){
             currentSpeed=MAX_SPEED;
         }
     }
-    protected void brake(){
+    public void brake(){
         if(currentSpeed>0){
             currentSpeed-=10;
         }

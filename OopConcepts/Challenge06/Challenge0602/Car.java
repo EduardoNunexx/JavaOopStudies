@@ -1,4 +1,4 @@
-package OopConcepts.Challenge0602;
+package OopConcepts.Challenge06.Challenge0602;
 
 public class Car {
     int currentSpeed=0;

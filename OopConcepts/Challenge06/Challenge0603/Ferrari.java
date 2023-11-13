@@ -1,4 +1,4 @@
-package OopConcepts.Challenge0603;
+package OopConcepts.Challenge06.Challenge0603;
 
 public class Ferrari extends Car{
     Ferrari(){
