@@ -7,4 +7,8 @@ public class Array {
         ArrayList<Integer> x = new ArrayList<>();
         x.add(1);
     }
+
+    public static Object asList(String string) {
+        return null;
+    }
 }
