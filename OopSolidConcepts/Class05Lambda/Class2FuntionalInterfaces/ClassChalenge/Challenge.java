@@ -12,10 +12,12 @@ public class Challenge {
         UnaryOperator<Double> cityTax= product-> product>=2500 ? product*1.085: product;
         UnaryOperator<Double> freight= product-> product>3000 ? product+100: product;
         Function<Double, String> format = product-> {
+            //converting the double to String
             DecimalFormat forma =new DecimalFormat("#.##");
             String f = forma.format(product);
             return f;};
-        UnaryOperator<String> exit = value-> "The real value is:"+value;
+        UnaryOperator<String> exit = value-> "The real value is: R$"+value.replace(".", ",");
+        //remember that the order are from left to right after the first method be fisnished 
         System.out.println(realValue.andThen(cityTax).andThen(freight).andThen(format).andThen(exit).apply(p));
     }
     
