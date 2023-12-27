@@ -1,4 +1,4 @@
-package OopSolidConcepts.Class07MapAndFilter.Filter.ChallengeFilter;
+package OopSolidConcepts.Class08Filter.Filter.ChallengeFilter;
 
 public class Product {
     String name;

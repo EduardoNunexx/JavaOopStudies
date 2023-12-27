@@ -1,4 +1,4 @@
-package OopSolidConcepts.Class07MapAndFilter.Filter;
+package OopSolidConcepts.Class08Filter.Filter;
 
 import java.util.Arrays;
 import java.util.List;

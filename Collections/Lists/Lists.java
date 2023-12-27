@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Lists {
+    
     public static void main(String[] args) {
         //How to declare
         ArrayList<User> list = new ArrayList<>();
