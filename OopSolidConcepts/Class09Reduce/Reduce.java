@@ -15,6 +15,5 @@ public class Reduce {
         System.out.println(numbers.stream().reduce(sum).get());
         //other way to use reduce (passing the start value)
         System.out.println(numbers.stream().reduce(100,sum));
-
     } 
 }
