@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "src\\com.SoftwareEnguineering.EduardoNunes.mineField",
+        "test",
+        "test\\com.SoftwareEnguineering.EduardoNunes.mineField",
+        "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}
