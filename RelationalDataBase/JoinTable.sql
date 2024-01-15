@@ -11,7 +11,7 @@ SELECT * from citys ct LEFT JOIN mayors m on ct.id=m.city_id;
 --FULL JOIN
 SELECT * from citys ct RIGHT JOIN mayors m on ct.id=m.city_id
 UNION
-SELECT * from citys ct LEFT JOIN mayors m on ct.id=m.city_id;
+    SELECT * from citys ct LEFT JOIN mayors m on ct.id=m.city_id;
 
 SELECT * FROM citys;
 SELECT * FROM mayors;
