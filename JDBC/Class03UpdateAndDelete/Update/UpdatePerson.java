@@ -1,4 +1,4 @@
-package JDBC.Class02InsertionsAndSelect.Update;
+package JDBC.Class03UpdateAndDelete.Update;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
