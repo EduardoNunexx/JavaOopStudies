@@ -9,7 +9,7 @@ public class Set {
         // how to declare
         HashSet conjunto = new HashSet();
         Set conjunto2= new Set();
-        // some methods commons to all collections
+        // some comons methods to all collections
 
         //add a new element in the collection
         conjunto.add(1);
