@@ -3,13 +3,14 @@ package model.basic;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //setting this class as a entity 
 @Entity
 public class User {
 	//setting this attribute as primary key 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	//about these others attributes by default all of them will be an collumn of this entity 

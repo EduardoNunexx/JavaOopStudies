@@ -11,15 +11,14 @@ public class NewUser {
 	public static void main(String[] args) {
 		//creating the entity manager factory and setting the persistence unity (this project that have all the mapped entitys)
 		EntityManagerFactory emf= Persistence.createEntityManagerFactory("jpa02");
-		//using the method to crate the entity manager setted
+		//using the method to crate the entity manager seted
 		EntityManager em=emf.createEntityManager();
 		
 		//inserting new elements using persist
-		User u1 = new User("user04","User04@gmail.com");
-		
+		User u1 = new User("user01","User01@gmail.com");
 		//starting the transaction
 		em.getTransaction().begin();
-		//doing the changes
+		//doing the changes (adding new user in the table)
 		em.persist(u1);
 		//sending the changes 
 		em.getTransaction().commit();
