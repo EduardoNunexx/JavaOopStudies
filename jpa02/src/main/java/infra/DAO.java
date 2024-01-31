@@ -11,7 +11,7 @@ import class02.Entit;
 
 //this class should be generic to can get all entity types that i want to use 
 //and i will set this interface that guarantee that a entity will be used here 
-public class DAO <E extends Entit>{
+public class DAO <E>{
 	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private Class<E> clas;
