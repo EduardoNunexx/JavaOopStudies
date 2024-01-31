@@ -13,14 +13,18 @@ public class SelectMultipleUsers {
 		//creating the entityManager
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa02");
 		EntityManager em = emf.createEntityManager();
+		
 		//create the command
 		String jpql ="select u from User u";
+		
 		//using the command to get the values and putting in this collenction
 		TypedQuery<User> query = em.createQuery(jpql, User.class);
-
+		//setting how many results i want 
 		query.setMaxResults(5);
+		
 		//putting the values in a list
 		List <User> users = query.getResultList();
+		
 		//showing the values
 		users.stream().forEach(x->System.out.println(x.getId()));
 		em.close();

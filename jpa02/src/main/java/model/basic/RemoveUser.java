@@ -9,14 +9,16 @@ public class RemoveUser {
 		//creating the entityManager
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa02");
 		EntityManager em = emf.createEntityManager();
-		//creating the transaction context
-		em.getTransaction().begin();
 		//getting the user that we'll update 
 		User user = em.find(User.class,4L);
-		//deleting the element
-		em.remove(user);
-		em.getTransaction().commit();
-	
+		//doing the null validity 
+		if(user!=null) {
+			//creating the transaction context
+			em.getTransaction().begin();
+			//deleting the element
+			em.remove(user);
+			em.getTransaction().commit();
+		}
 		em.close();
 		emf.close();
 	}

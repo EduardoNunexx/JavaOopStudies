@@ -1,21 +1,19 @@
-package model.basic;
+package class02;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import net.bytebuddy.matcher.CollectionItemMatcher;
-
-public class SelectUsers {
-	public static void main(String[] args) {
+public class SelectProducts {
+public static void main(String[] args) {
 		
 		//creating the entityManager
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa02");
 		EntityManager em = emf.createEntityManager();
 		//Using the command find 
 		//giving to him the class type that you want to receive and the element primary Key's value 
-		User user = em.find(User.class,3L);
-		System.out.println(user.getName());
+		Product product = em.find(Product.class,3L);
+		System.out.println(product.getName());
 		
 		em.close();
 		emf.close(); 
