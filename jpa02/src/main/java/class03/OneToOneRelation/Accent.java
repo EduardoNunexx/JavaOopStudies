@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import class02.Entit;
@@ -16,6 +17,11 @@ public class Accent implements Entit {
 	private Long id;
 	private String name;
 	
+	//doing the bidiretional relation
+	//i'm telling to jpa that this is an relation already mapped
+	@OneToOne(mappedBy = "accent")
+	private Customer customer;
+	
 	public Accent(String name) {
 		super(); 
 		this.name = name;
@@ -25,7 +31,7 @@ public class Accent implements Entit {
 	}
 	public Long getId() {
 		return id;
-	}
+	}	
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -34,6 +40,12 @@ public class Accent implements Entit {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	
 }

@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import class02.Entit;
+import class03App.GetClientAccent;
 
 //this class should be generic to can get all entity types that i want to use 
 //and i will set this interface that guarantee that a entity will be used here 
@@ -30,7 +31,7 @@ public class DAO <E>{
 	public DAO() {
 		this(null);
 	}
-	//creating the methods 
+	//creating the transactions methods 
 	public DAO<E> openTransaction(){
 		em.getTransaction().begin();
 		return this;
@@ -39,15 +40,20 @@ public class DAO <E>{
 		em.getTransaction().commit();;
 		return this;
 	}
+	//method to add some element
 	public DAO<E>include (E entity){
 		em.persist(entity);
 		return this;
 	}
-	//this method start and commit the transaction 
+	//this method start, include and commit the transaction 
 	public DAO<E> includeWithEverything(E entity){
 		return this.openTransaction().include(entity).closeTransaction();
 	}
-	
+	//method to get one specify value from the table 
+	public E getById(Long id) {
+		return em.find(clas,id);
+	}
+	//method to get all table values 
 	public List<E> getAll(int quantity, int desloc){
 		if(clas==null) {
 			throw new UnsupportedOperationException("null class");

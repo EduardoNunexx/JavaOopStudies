@@ -21,6 +21,7 @@ public class Product implements Entit{
 	@Column(name = "product_price", nullable = false,precision = 11) //precision are the numbers size, and scale are how many numbers you will have in the decimal size
 	private Double price;
 	
+	
 	public Product() {
 		
 	}

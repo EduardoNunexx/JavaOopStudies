@@ -6,6 +6,9 @@
 	<class>class02.Product</class>
 	<class>class03.OneToOneRelation.Accent</class>
 	<class>class03.OneToOneRelation.Customer</class>
+	<class>Class04OneToN.ItemOrder</class>
+	<class>Class04OneToN.Ordr</class>
+	
 	<properties>
 		<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/newDB"/>

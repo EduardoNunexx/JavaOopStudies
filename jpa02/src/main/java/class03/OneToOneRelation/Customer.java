@@ -1,5 +1,6 @@
 package class03.OneToOneRelation;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,8 @@ public class Customer implements Entit {
 	
 	//doing the relation
 	//this will crate a attribute called accent_id in the customer table
-	@OneToOne
+	//using the cascade to set the operations orders and when he needs to do some change in the table he do
+	@OneToOne(cascade = CascadeType.PERSIST)
 	//ensuring that the attribute will be one to one relationship  
 	@JoinColumn(name= "accent_id", unique = true)
 	private Accent accent;
@@ -60,6 +62,7 @@ public class Customer implements Entit {
 	public void setAccent(Accent accent) {
 		this.accent = accent;
 	}
+	
 	
 	
 }
