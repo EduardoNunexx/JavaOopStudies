@@ -1,10 +1,11 @@
-package Class04OneToN;
+package class04OneToN;
 
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,8 +18,10 @@ public class Ordr {
 	private Long id; 
 	@Column(nullable = false)
 	private Date data;
-	//setting the one to many relation
-	@OneToMany(mappedBy = "order")
+	//setting the one to many relation 
+	//setting the fetch to tell how will works the entity loads  
+	
+	@OneToMany(mappedBy = "order",fetch = FetchType.EAGER) 
 	private List<ItemOrder> itens;
 	
 	public Ordr() { 

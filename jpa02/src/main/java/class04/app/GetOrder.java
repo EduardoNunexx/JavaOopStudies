@@ -1,7 +1,7 @@
 package class04.app;
 
-import Class04OneToN.ItemOrder;
-import Class04OneToN.Ordr;
+import class04OneToN.ItemOrder;
+import class04OneToN.Ordr;
 import infra.DAO;
 
 public class GetOrder {

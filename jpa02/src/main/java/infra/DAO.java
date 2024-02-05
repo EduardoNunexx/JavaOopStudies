@@ -7,9 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import class02.Entit;
-import class03App.GetClientAccent;
-
 //this class should be generic to can get all entity types that i want to use 
 //and i will set this interface that guarantee that a entity will be used here 
 public class DAO <E>{
@@ -72,6 +69,15 @@ public class DAO <E>{
 		TypedQuery<E> query = em.createQuery(jpql, clas);
 		return query.getResultList();
 	} 
+	//method to use created querys 
+	public List<E> getByQuery(String Nmequery, Object... params){
+		TypedQuery<E> query = em.createNamedQuery(Nmequery, clas);
+		for (int i = 0; i < params.length; i+=2) {
+			query.setParameter(params[i].toString(), params[i+1]);
+		}
+		
+		return query.getResultList();
+	}
 	public DAO<E> close(){
 		em.close();
 		return this;

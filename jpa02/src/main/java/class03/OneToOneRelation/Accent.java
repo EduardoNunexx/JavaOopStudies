@@ -17,8 +17,8 @@ public class Accent implements Entit {
 	private Long id;
 	private String name;
 	
-	//doing the bidiretional relation
-	//i'm telling to jpa that this is an relation already mapped
+	//doing the bidirectional relation
+	//i'm telling to JPA that this's an relation already mapped
 	@OneToOne(mappedBy = "accent")
 	private Customer customer;
 	

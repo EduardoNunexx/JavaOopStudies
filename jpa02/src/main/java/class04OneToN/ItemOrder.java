@@ -1,4 +1,4 @@
-package Class04OneToN;
+package class04OneToN;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
