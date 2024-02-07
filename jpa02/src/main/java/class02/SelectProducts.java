@@ -12,7 +12,7 @@ public static void main(String[] args) {
 		EntityManager em = emf.createEntityManager();
 		//Using the command find 
 		//giving to him the class type that you want to receive and the element primary Key's value 
-		Product product = em.find(Product.class,3L);
+		Product product = em.find(Product.class, 3L);
 		System.out.println(product.getName());
 		
 		em.close();

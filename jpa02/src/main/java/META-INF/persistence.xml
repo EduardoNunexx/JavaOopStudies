@@ -6,15 +6,28 @@
 	<mapping-file>META-INF/querys.xml </mapping-file>
 	
 	<class>model.basic.User</class>
+	
 	<class>class02.Product</class>
+	
 	<class>class03.OneToOneRelation.Accent</class>
 	<class>class03.OneToOneRelation.Customer</class>
+	
 	<class>class04OneToN.ItemOrder</class>
 	<class>class04OneToN.Ordr</class>
+		
 	<class>class05NToN.Nephew</class>
 	<class>class05NToN.Uncle</class>
 	<class>class05NToN.Actor</class>
 	<class>class05NToN.Movie</class>
+	
+	<class>class06Composition.Adress</class>
+	<class>class06Composition.Employee</class>
+	<class>class06Composition.Supplier</class>
+	
+	<class>class07Inheritance.ScholarshipStudent</class>
+	<class>class07Inheritance.Student</class>
+	
+	
 	
 	<properties>
 		<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

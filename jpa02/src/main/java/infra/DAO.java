@@ -69,14 +69,18 @@ public class DAO <E>{
 		TypedQuery<E> query = em.createQuery(jpql, clas);
 		return query.getResultList();
 	} 
-	//method to use created querys 
+	//method to use named query
 	public List<E> getByQuery(String Nmequery, Object... params){
 		TypedQuery<E> query = em.createNamedQuery(Nmequery, clas);
 		for (int i = 0; i < params.length; i+=2) {
 			query.setParameter(params[i].toString(), params[i+1]);
 		}
-		
 		return query.getResultList();
+	}
+	//method that are using using the native named query that i'd create
+	public E getOneByQuery(String Nmequery, Object... params){
+		List<E> list = getByQuery(Nmequery, params);
+		return list ==null ? null: list.get(0);
 	}
 	public DAO<E> close(){
 		em.close();
