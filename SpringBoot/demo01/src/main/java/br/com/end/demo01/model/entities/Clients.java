@@ -1,4 +1,4 @@
-package br.com.end.demo01.models;
+package br.com.end.demo01.model.entities;
 
 public class Clients {
 	private int id;

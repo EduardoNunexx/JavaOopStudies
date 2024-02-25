@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.end.demo01.models.Clients;
+import br.com.end.demo01.model.entities.Clients;
 
 @RestController
 //using the annotation @RequesMapping to set the default URL of this class
