@@ -23,8 +23,6 @@ class Connection extends Thread {
 			in = new DataInputStream( clientSocket.getInputStream());
 			out =new DataOutputStream( clientSocket.getOutputStream());
 			this.start();
-			this.run();
-			
 	     } catch(IOException e)  {System.out.println("Connection:"+e.getMessage());}
 	}
 	public void run(){

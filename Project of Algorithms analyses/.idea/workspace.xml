@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70578cd2-95ce-4263-b690-7d89ba9ac53b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../SpringBoot/demo01/src/main/java/br/com/end/demo01/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot/demo01/src/main/java/br/com/end/demo01/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringBoot/demo01/src/main/java/br/com/end/demo01/model/repositories/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringBoot/demo01/src/main/java/br/com/end/demo01/model/repositories/ProductsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exerc/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../exerc/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sockets/Sockets01/src/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Sockets/Sockets01/src/TCPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +12,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2dNX4E48ZklUaW7nUK8dAZMQAWc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,7 +26,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/eduar/Desktop/Semestre3(Projects)/JavaOopStudies/Project of Algorithms analyses",
+    "last_opened_file_path": "C:/Users/eduar/Desktop/Semestre3(Projects)/JavaOopStudies/Sockets",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -49,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709849317160</updated>
       <workItem from="1709849318252" duration="44000" />
+      <workItem from="1710202967386" duration="34000" />
     </task>
     <servers />
   </component>
