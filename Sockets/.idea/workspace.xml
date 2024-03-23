@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80ca6004-a9a0-4a5a-8e48-f7efe899d8e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project of Algorithms analyses/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project of Algorithms analyses/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/Sockets01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/src/Calculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/src/TCPClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/src/TCPServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/src/UDPClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sockets01/src/UDPServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sockets03ChatWithThreads/src/UDPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sockets03ChatWithThreads/src/UDPClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sockets03ChatWithThreads/src/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sockets03ChatWithThreads/src/UDPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +85,7 @@
       <workItem from="1710364042420" duration="236000" />
       <workItem from="1710364547569" duration="28000" />
       <workItem from="1710364659084" duration="65000" />
+      <workItem from="1710973459250" duration="1358000" />
     </task>
     <servers />
   </component>

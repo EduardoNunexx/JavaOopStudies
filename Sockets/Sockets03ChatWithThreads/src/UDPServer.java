@@ -1,12 +1,13 @@
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class UDPServer{
-	public static void main(String args[]){ 
+	public static void main(String args[]){
 		DatagramSocket aSocket = null;
 	    try{
 	    	aSocket = new DatagramSocket(6789);
@@ -56,22 +57,18 @@ public class UDPServer{
 				do {
 					DatagramPacket request = new DatagramPacket(buffer, buffer.length);
 					//adding the response to request var
-					//aqui o erro
-					aSocket.receive(request);
 					String serverResponse = sc.nextLine();
 					//translating the response to bytes
 					byte[] responseBytes = serverResponse.getBytes(StandardCharsets.UTF_8);
 					//creating the response that will be sent
 					DatagramPacket reply = new DatagramPacket(responseBytes,
-							responseBytes.length, request.getAddress(), request.getPort());
+							responseBytes.length, InetAddress.getLocalHost(), 6789);
 					//sending the response
 					aSocket.send(reply);
 				}while (true);
 			}catch (IOException e){
 				System.out.println(e);
 			}
-
-
 		}
 	}
 }
