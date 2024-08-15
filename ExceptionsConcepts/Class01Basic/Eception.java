@@ -5,7 +5,7 @@ public class Eception {
         // if i try to print a div by 0 i'll recieve a exception
         //Exception in thread "main" java.lang.ArithmeticException: / by zero
         System.out.println(7/0);
-        //so i willuse a way to change this exeption
+        //so i will use a way to change this exeption
         //using try and catch
         try{
             System.out.println(7/0);

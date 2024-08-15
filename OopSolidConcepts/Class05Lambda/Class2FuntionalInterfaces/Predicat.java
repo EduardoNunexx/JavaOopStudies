@@ -10,7 +10,7 @@ public class Predicat {
         // in this case his return will be true if i give some value bigger than 500
         Predicate<Integer> x = value -> value > 500;
         // using the predicate
-        System.out.println(x.test(550));
+        System.out.println(x.test(550)); 
         
     }
 

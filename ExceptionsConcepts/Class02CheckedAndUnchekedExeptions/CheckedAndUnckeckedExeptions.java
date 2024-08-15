@@ -19,7 +19,7 @@ public class CheckedAndUnckeckedExeptions {
     //implementing a unchecked exception 
     static void show(String x) {
         if(x==null){
-            //ina a uncheked expception the type to be throwed must be or hinerit an runtimeExeption
+            //on a uncheked expception the type to be throwed must be or hinerit an runtimeExeption
             throw new RuntimeException("the value cant be null");
         }
         System.out.println(x);

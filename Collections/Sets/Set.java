@@ -16,9 +16,9 @@ public class Set {
         //remember that, in a set collection you cant save repeated elements 
         conjunto.add(1);
         conjunto.add(2);
-        //remove an collection element
+        //remove a collection element
         conjunto.remove(2);
-        //checking if the collection has sany especified element 
+        //checking if the collection has any especified element 
         conjunto.contains(0);
         System.out.println(conjunto);
         //union of two collections 

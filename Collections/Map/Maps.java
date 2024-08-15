@@ -32,7 +32,7 @@ public class Maps {
         map.entrySet();
         System.out.println(map2.entrySet());
         
-        //to check if conteins some value/ke 
+        //to check if conteins some value/key
         map.containsValue("jao");
         map.containsKey(5);
         System.out.println(map2.containsKey(5));
@@ -49,6 +49,7 @@ public class Maps {
             System.out.println(aux.getKey());
             System.out.println(aux.getValue());
         }
+        
     }
 
 }
