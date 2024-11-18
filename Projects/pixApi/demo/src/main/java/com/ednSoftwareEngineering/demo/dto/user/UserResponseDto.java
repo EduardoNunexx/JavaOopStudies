@@ -1,5 +1,6 @@
 package com.ednSoftwareEngineering.demo.dto.user;
 
+import com.ednSoftwareEngineering.demo.dto.bankaccount.BankAccountResponseDto;
 import com.ednSoftwareEngineering.demo.model.entities.BankAccount;
 import com.ednSoftwareEngineering.demo.model.entities.PixKey;
 
@@ -11,6 +12,6 @@ public record UserResponseDto(
         UUID id,
         String name,
         LocalDate dateOfBirth,
-        List<BankAccount> bankAccounts,
+        List<BankAccountResponseDto> bankAccounts,
         List<PixKey> pixKeys) {
 }

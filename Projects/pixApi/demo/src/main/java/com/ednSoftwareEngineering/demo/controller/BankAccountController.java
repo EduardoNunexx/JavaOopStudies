@@ -20,6 +20,7 @@ public class BankAccountController {
     @Autowired
     BankAccountServices bankAccountServices;
     //TODO verify the create method, thinks about the way that you send just the user id instead the all the object
+    //TODO CHANGE TO THE DTOS
     @PostMapping
     public ResponseEntity<BankAccount> createBankAccount(@RequestBody @Valid BankAccount bankAccount){
         BankAccount bankAccountCreated =bankAccountServices.createBankAccount(bankAccount);
