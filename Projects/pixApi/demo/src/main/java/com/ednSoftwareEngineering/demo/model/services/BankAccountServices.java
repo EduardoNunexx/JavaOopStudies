@@ -12,4 +12,5 @@ public interface BankAccountServices {
     public BankAccount updateBankAccount(UUID id, BankAccount bankAccount);
     public void deleteBankAccount(UUID id);
     public List<BankAccount> findAllAccountsByUserId(UUID id);
+    public List<BankAccount> findAllAccounts();
 }

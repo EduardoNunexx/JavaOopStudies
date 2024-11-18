@@ -1,5 +1,8 @@
 package com.ednSoftwareEngineering.demo.controller;
 
+import com.ednSoftwareEngineering.demo.dto.user.UserResponseDto;
+import com.ednSoftwareEngineering.demo.dto.user.UserSaveDto;
+import com.ednSoftwareEngineering.demo.mapper.UserMapper;
 import com.ednSoftwareEngineering.demo.model.entities.User;
 import com.ednSoftwareEngineering.demo.model.services.UserServices;
 import jakarta.validation.Valid;
@@ -19,15 +22,17 @@ import java.util.UUID;
 public class UserController {
     @Autowired
     private UserServices userServices;
+    @Autowired
+    private UserMapper userMapper;
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user){
-        User userCreated = userServices.createUser(user);
+    public ResponseEntity<UserResponseDto> createUser(@RequestBody UserSaveDto userSaveDto){
+        User userCreated = userServices.createUser(userMapper.toEntity(userSaveDto));
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(userCreated.getId()).toUri();
-        return ResponseEntity.created(location).body(userCreated);
+        return ResponseEntity.created(location).body(userMapper.toResponseDto(userCreated));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable(name = "id") UUID id, @RequestBody @Valid User user){
-        return ResponseEntity.ok(userServices.updateUser(id,user));
+    public ResponseEntity<User> updateUser(@PathVariable(name = "id") UUID id, @RequestBody @Valid UserSaveDto userSaveDto){
+        return ResponseEntity.ok(userServices.updateUser(id,userMapper.toEntity(userSaveDto)));
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable (name = "id")UUID id){
@@ -36,8 +41,9 @@ public class UserController {
     }
     //just for tests
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers(){
-        return ResponseEntity.ok(userServices.getAllUsers());
+    public ResponseEntity<List<UserResponseDto>> getAllUsers(){
+        List<UserResponseDto> userResponseDto = userServices.getAllUsers().stream().map(userMapper::toResponseDto).toList();
+        return ResponseEntity.ok(userResponseDto);
     }
 
 }

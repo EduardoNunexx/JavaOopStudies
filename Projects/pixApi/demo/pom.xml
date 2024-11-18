@@ -69,5 +69,8 @@
 			</plugin>
 		</plugins>
 	</build>
+	<build>
+
+	</build>
 
 </project>

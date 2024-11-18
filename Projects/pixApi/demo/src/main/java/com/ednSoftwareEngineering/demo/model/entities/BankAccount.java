@@ -15,6 +15,7 @@ import java.util.UUID;
 @Table(name = "BankAccounts")
 @Entity
 public class BankAccount implements Serializable {
+    //todo adcionar a instituição
     @Serial
     private static final long serialVersionUID=1L;
     @Id
@@ -23,9 +24,10 @@ public class BankAccount implements Serializable {
     private UUID id;
     @ManyToOne
     @JoinColumn(name = "users_id")
-    //@JsonIgnore
+    @JsonBackReference
     private User user;
     @OneToMany(mappedBy = "bankAccount",fetch = FetchType.LAZY)
+    //TODO -------------
     //@JsonManagedReference
     private List<PixKey> pixKeys;
     private Double amount;

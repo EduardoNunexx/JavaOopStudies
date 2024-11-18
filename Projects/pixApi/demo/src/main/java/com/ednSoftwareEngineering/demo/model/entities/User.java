@@ -20,15 +20,12 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "users_id")
     private UUID id;
-    @NotEmpty
+
     private String name;
-    @NotNull
     private LocalDate dateOfBirth;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE,fetch = FetchType.LAZY)
-    //@JsonManagedReference
+    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
     private List<BankAccount> bankAccounts;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    //@JsonManagedReference
+    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
     private List<PixKey> pixKeys;
 
     public UUID getId() {

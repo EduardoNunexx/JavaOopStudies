@@ -33,6 +33,10 @@ public class BankAccountServiceImp implements BankAccountServices {
     public List<BankAccount> findAllAccountsByUserId(UUID id){
         return bankAccountRepository.findAllByUserId(id);
     }
+    public List<BankAccount> findAllAccounts(){
+        return bankAccountRepository.findAll();
+    }
+
 
 
 }

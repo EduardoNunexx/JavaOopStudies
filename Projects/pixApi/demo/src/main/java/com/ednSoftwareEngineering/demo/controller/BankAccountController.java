@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -33,5 +34,9 @@ public class BankAccountController {
     public ResponseEntity<Void> deleteBankAccount(@PathVariable(name="id") UUID id){
         bankAccountServices.deleteBankAccount(id);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping
+    public ResponseEntity<List<BankAccount>> getAllBankAccounts(){
+        return ResponseEntity.ok(bankAccountServices.findAllAccounts());
     }
 }

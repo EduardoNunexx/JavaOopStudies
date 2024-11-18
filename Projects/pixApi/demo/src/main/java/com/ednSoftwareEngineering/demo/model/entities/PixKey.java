@@ -23,19 +23,14 @@ public class PixKey implements Serializable {
     private PixKeyType keyType;
     @ManyToOne
     @JoinColumn(name = "users_id")
-    //@JsonIgnore
+    @JsonBackReference
     private User user;
     @ManyToOne
     @JoinColumn(name = "bank_account_id")
+    //TODO --------------------------------
     //@JsonIgnore
+    //@JsonBackReference
     private BankAccount bankAccount;
-
-    public PixKey(String keyValue, PixKeyType keyType, User user, BankAccount bankAccount) {
-        this.keyValue = keyValue;
-        this.keyType = keyType;
-        this.user = user;
-        this.bankAccount = bankAccount;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -66,8 +61,7 @@ public class PixKey implements Serializable {
         return keyType;
     }
 
-    public void setKeyType(PixKeyType keyType) {
-        keyType = keyType;
+    public void setKeyType(PixKeyType keyType) {this.keyType = keyType;
     }
 
     public User getUser() {
