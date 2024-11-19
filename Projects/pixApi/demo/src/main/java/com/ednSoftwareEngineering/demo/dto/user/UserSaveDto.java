@@ -12,6 +12,5 @@ import java.util.UUID;
 public record UserSaveDto(
         @NotNull String name,
         @NotNull LocalDate dateOfBirth,
-        @Valid List<BankAccount> bankAccounts,
-        List<PixKey> pixKeys){
+        @Valid List<BankAccount> bankAccounts){
 }

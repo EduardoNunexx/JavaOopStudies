@@ -19,10 +19,10 @@ public class UserMapper {
         if (user.getBankAccounts()!=null) {
             bankAccountResponseDtos = user.getBankAccounts().stream().map(bankAccountMapper::toResponseDto).toList();
         }
-        return new UserResponseDto(user.getId(), user.getName(), user.getDateOfBirth(), bankAccountResponseDtos,user.getPixKeys());
+        return new UserResponseDto(user.getId(), user.getName(), user.getDateOfBirth(), bankAccountResponseDtos);
     }
     public User toEntity(UserSaveDto userSaveDto){
-        return new User(userSaveDto.name(),userSaveDto.dateOfBirth(),userSaveDto.bankAccounts(),userSaveDto.pixKeys());
+        return new User(userSaveDto.name(),userSaveDto.dateOfBirth(),userSaveDto.bankAccounts());
     }
 
 }

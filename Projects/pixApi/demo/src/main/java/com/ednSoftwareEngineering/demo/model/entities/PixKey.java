@@ -10,40 +10,29 @@ import jakarta.validation.constraints.NotNull;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 @Table(name = "PixKeys")
 @Entity
 public class PixKey implements Serializable {
+    //todo implements equals and hash code
     @Serial
     private static final long serialVersionUID=1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "pix_key_id")
+    private UUID id;
+    @Column(unique = true)
     private String keyValue;
     @NotNull
+    @Enumerated(EnumType.STRING)
     private PixKeyType keyType;
-    @ManyToOne
-    @JoinColumn(name = "users_id")
-    @JsonBackReference
-    private User user;
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "bank_account_id")
-    //TODO --------------------------------
-    //@JsonIgnore
-    //@JsonBackReference
     private BankAccount bankAccount;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PixKey pixKey = (PixKey) o;
-        return Objects.equals(keyValue, pixKey.keyValue) && keyType == pixKey.keyType && Objects.equals(user, pixKey.user) && Objects.equals(bankAccount, pixKey.bankAccount);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(keyValue, keyType, user, bankAccount);
-    }
 
     public PixKey(){
 
@@ -63,15 +52,6 @@ public class PixKey implements Serializable {
 
     public void setKeyType(PixKeyType keyType) {this.keyType = keyType;
     }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public BankAccount getBankAccount() {
         return bankAccount;
     }
@@ -80,4 +60,13 @@ public class PixKey implements Serializable {
         this.bankAccount = bankAccount;
     }
 
+    public PixKey(String keyValue, PixKeyType keyType, BankAccount bankAccount) {
+        this.keyValue = keyValue;
+        this.keyType = keyType;
+        this.bankAccount = bankAccount;
+    }
+
+    public UUID getId() {
+        return id;
+    }
 }

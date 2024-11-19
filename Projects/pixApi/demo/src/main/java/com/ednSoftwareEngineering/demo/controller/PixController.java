@@ -1,5 +1,8 @@
 package com.ednSoftwareEngineering.demo.controller;
 
+import com.ednSoftwareEngineering.demo.dto.pixKey.PixKeyResponseDto;
+import com.ednSoftwareEngineering.demo.dto.pixKey.PixKeySaveDto;
+import com.ednSoftwareEngineering.demo.mapper.PixKeyMapper;
 import com.ednSoftwareEngineering.demo.model.entities.PixKey;
 import com.ednSoftwareEngineering.demo.model.repository.PixKeyRepository;
 import com.ednSoftwareEngineering.demo.model.services.PixServices;
@@ -16,11 +19,13 @@ import java.net.URI;
 public class PixController {
     @Autowired
     PixServices pixServices;
+    @Autowired
+    PixKeyMapper pixKeyMapper;
     @PostMapping()
-    public ResponseEntity<PixKey> createPixKey(@RequestBody @Valid PixKey pixKey){
+    public ResponseEntity<PixKeyResponseDto> createPixKey(@RequestBody @Valid PixKey pixKey){
         PixKey pixKeyCreated =pixServices.createPixKey(pixKey);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(pixKeyCreated.getKeyValue()).toUri();
-        return ResponseEntity.created(location).body(pixKeyCreated);
+        return ResponseEntity.created(location).body(pixKeyMapper.toResponseDto(pixKeyCreated));
     }
 
 }

@@ -29,7 +29,6 @@ public class UserServiceImp implements UserServices {
          User oldUser = userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User not found"));
          oldUser.setName(user.getName());
          oldUser.setBankAccounts(user.getBankAccounts());
-         oldUser.setPixKeys(user.getPixKeys());
          oldUser.setDateOfBirth(user.getDateOfBirth());
          return userRepository.save(oldUser);
     }

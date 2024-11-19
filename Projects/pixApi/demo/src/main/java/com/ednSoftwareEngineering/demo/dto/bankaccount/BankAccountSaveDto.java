@@ -10,7 +10,7 @@ import java.util.List;
 public record BankAccountSaveDto(
         @NotNull User user,
         List<PixKey> pixKeys,
-        Double amount,
+        @NotNull Double accountBalance,
         @NotNull AccountType accountType,
         @NotNull String institutionName
         ) {

@@ -25,8 +25,6 @@ public class User implements Serializable {
     private LocalDate dateOfBirth;
     @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
     private List<BankAccount> bankAccounts;
-    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
-    private List<PixKey> pixKeys;
 
     public UUID getId() {
         return id;
@@ -60,19 +58,11 @@ public class User implements Serializable {
         this.bankAccounts = bankAccounts;
     }
 
-    public List<PixKey> getPixKeys() {
-        return pixKeys;
-    }
 
-    public void setPixKeys(List<PixKey> pixKeys) {
-        this.pixKeys = pixKeys;
-    }
-
-    public User(String name, LocalDate dateOfBirth, List<BankAccount> bankAccounts, List<PixKey> pixKeys) {
+    public User(String name, LocalDate dateOfBirth, List<BankAccount> bankAccounts) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.bankAccounts = bankAccounts;
-        this.pixKeys = pixKeys;
     }
     public User(){
 

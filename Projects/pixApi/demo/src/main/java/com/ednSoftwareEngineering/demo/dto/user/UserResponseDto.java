@@ -12,6 +12,5 @@ public record UserResponseDto(
         UUID id,
         String name,
         LocalDate dateOfBirth,
-        List<BankAccountResponseDto> bankAccounts,
-        List<PixKey> pixKeys) {
+        List<BankAccountResponseDto> bankAccounts) {
 }

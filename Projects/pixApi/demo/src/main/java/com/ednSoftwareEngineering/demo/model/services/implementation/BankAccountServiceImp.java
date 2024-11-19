@@ -23,7 +23,7 @@ public class BankAccountServiceImp implements BankAccountServices {
         BankAccount bankAccountFound = bankAccountRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("BankAccount not found"));
         bankAccountFound.setUser(bankAccount.getUser());
         bankAccountFound.setPixKeys(bankAccount.getPixKeys());
-        bankAccountFound.setAmount(bankAccount.getAmount());
+        bankAccountFound.setAccountBalance(bankAccount.getAccountBalance());
         return bankAccountRepository.save(bankAccountFound);
     }
     @Override

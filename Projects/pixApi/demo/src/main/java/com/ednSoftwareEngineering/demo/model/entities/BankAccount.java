@@ -26,15 +26,16 @@ public class BankAccount implements Serializable {
     private User user;
     @OneToMany(mappedBy = "bankAccount",fetch = FetchType.LAZY)
     private List<PixKey> pixKeys;
-    private Double amount;
+    private Double accountBalance;
+    @Enumerated(EnumType.STRING)
     private AccountType accountType;
     private String institutionName;
 
-    public BankAccount(User user, List<PixKey> pixKeys, AccountType accountType, Double amount, String institutionName) {
+    public BankAccount(User user, List<PixKey> pixKeys, AccountType accountType, Double accountBalance, String institutionName) {
         this.user = user;
         this.pixKeys = pixKeys;
         this.accountType=accountType;
-        this.amount=amount;
+        this.accountBalance=accountBalance;
         this.institutionName =institutionName;
     }
     public BankAccount(){
@@ -74,12 +75,12 @@ public class BankAccount implements Serializable {
         this.pixKeys = pixKeys;
     }
 
-    public Double getAmount() {
-        return amount;
+    public Double getAccountBalance() {
+        return accountBalance;
     }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
+    public void setAccountBalance(Double accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     public AccountType getAccountType() {
