@@ -8,7 +8,8 @@ import java.util.List;
 public record BankAccountResponseDto(
         List<PixKey> pixKeys,
         Double amount,
-        AccountType accountType
+        AccountType accountType,
+        String institutionName
         ) {
 
 }

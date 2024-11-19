@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class BankAccountMapper {
     public BankAccountResponseDto toResponseDto(BankAccount bankAccount) {
-        return new BankAccountResponseDto(bankAccount.getPixKeys(),bankAccount.getAmount(),bankAccount.getAccountType());
+        return new BankAccountResponseDto(bankAccount.getPixKeys(),bankAccount.getAmount(),bankAccount.getAccountType(),bankAccount.getInstitutionName());
     }
     public BankAccount toEntity(BankAccountSaveDto bankAccountSave){
-        return new BankAccount(bankAccountSave.user(),bankAccountSave.pixKeys(),bankAccountSave.accountType(), bankAccountSave.amount());
+        return new BankAccount(bankAccountSave.user(),bankAccountSave.pixKeys(),bankAccountSave.accountType(), bankAccountSave.amount(), bankAccountSave.institutionName());
     }
 }

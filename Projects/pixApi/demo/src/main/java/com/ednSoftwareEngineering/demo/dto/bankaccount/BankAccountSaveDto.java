@@ -11,5 +11,7 @@ public record BankAccountSaveDto(
         @NotNull User user,
         List<PixKey> pixKeys,
         Double amount,
-        @NotNull AccountType accountType) {
+        @NotNull AccountType accountType,
+        @NotNull String institutionName
+        ) {
 }

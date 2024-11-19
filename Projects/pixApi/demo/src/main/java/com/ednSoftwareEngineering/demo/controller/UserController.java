@@ -7,8 +7,6 @@ import com.ednSoftwareEngineering.demo.model.entities.User;
 import com.ednSoftwareEngineering.demo.model.services.UserServices;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -31,8 +29,8 @@ public class UserController {
         return ResponseEntity.created(location).body(userMapper.toResponseDto(userCreated));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable(name = "id") UUID id, @RequestBody @Valid UserSaveDto userSaveDto){
-        return ResponseEntity.ok(userServices.updateUser(id,userMapper.toEntity(userSaveDto)));
+    public ResponseEntity<UserResponseDto> updateUser(@PathVariable(name = "id") UUID id, @RequestBody @Valid UserSaveDto userSaveDto){
+        return ResponseEntity.ok(userMapper.toResponseDto(userServices.updateUser(id,userMapper.toEntity(userSaveDto))));
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable (name = "id")UUID id){
@@ -42,8 +40,7 @@ public class UserController {
     //just for tests
     @GetMapping
     public ResponseEntity<List<UserResponseDto>> getAllUsers(){
-        List<UserResponseDto> userResponseDto = userServices.getAllUsers().stream().map(userMapper::toResponseDto).toList();
-        return ResponseEntity.ok(userResponseDto);
+        return ResponseEntity.ok(userServices.getAllUsers().stream().map(userMapper::toResponseDto).toList());
     }
 
 }
