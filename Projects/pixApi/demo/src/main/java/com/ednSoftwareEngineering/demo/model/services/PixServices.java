@@ -3,7 +3,6 @@ package com.ednSoftwareEngineering.demo.model.services;
 import com.ednSoftwareEngineering.demo.enums.PixKeyType;
 import com.ednSoftwareEngineering.demo.model.entities.BankAccount;
 import com.ednSoftwareEngineering.demo.model.entities.PixKey;
-import com.ednSoftwareEngineering.demo.model.entities.User;
 
 public interface PixServices {
     public PixKey createPixKey(PixKey pixKey);

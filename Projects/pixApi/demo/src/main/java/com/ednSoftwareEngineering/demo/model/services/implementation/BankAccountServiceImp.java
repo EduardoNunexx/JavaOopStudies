@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 @Service
 public class BankAccountServiceImp implements BankAccountServices {
@@ -37,6 +38,10 @@ public class BankAccountServiceImp implements BankAccountServices {
         return bankAccountRepository.findAll();
     }
 
+    public BankAccount findAccountById(UUID id){
+        Optional<BankAccount> bankAccount = bankAccountRepository.findById(id);
+        return bankAccount.orElseThrow(()->new ResourceNotFoundException("Account not found"));
+    }
 
 
 }

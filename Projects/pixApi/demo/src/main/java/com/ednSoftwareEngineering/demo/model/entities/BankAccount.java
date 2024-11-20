@@ -24,19 +24,26 @@ public class BankAccount implements Serializable {
     @ManyToOne
     @JoinColumn(name = "users_id")
     private User user;
-    @OneToMany(mappedBy = "bankAccount",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "bankAccount")
     private List<PixKey> pixKeys;
+    @OneToMany(mappedBy = "sourceAccount", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transactions> outgoingTransactions;
+
+    @OneToMany(mappedBy = "destinationAccount", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transactions> incomingTransactions;
     private Double accountBalance;
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
     private String institutionName;
 
-    public BankAccount(User user, List<PixKey> pixKeys, AccountType accountType, Double accountBalance, String institutionName) {
+    public BankAccount(User user, List<PixKey> pixKeys, AccountType accountType, Double accountBalance, String institutionName, List<Transactions> incomingTransactions,List<Transactions> outgoingTransactions) {
         this.user = user;
         this.pixKeys = pixKeys;
         this.accountType=accountType;
         this.accountBalance=accountBalance;
         this.institutionName =institutionName;
+        this.incomingTransactions=incomingTransactions;
+        this.outgoingTransactions=outgoingTransactions;
     }
     public BankAccount(){
 
@@ -97,5 +104,21 @@ public class BankAccount implements Serializable {
 
     public void setInstitutionName(String institutionName) {
         this.institutionName = institutionName;
+    }
+
+    public List<Transactions> getOutgoingTransactions() {
+        return outgoingTransactions;
+    }
+
+    public void setOutgoingTransactions(List<Transactions> outgoingTransactions) {
+        this.outgoingTransactions = outgoingTransactions;
+    }
+
+    public List<Transactions> getIncomingTransactions() {
+        return incomingTransactions;
+    }
+
+    public void setIncomingTransactions(List<Transactions> incomingTransactions) {
+        this.incomingTransactions = incomingTransactions;
     }
 }

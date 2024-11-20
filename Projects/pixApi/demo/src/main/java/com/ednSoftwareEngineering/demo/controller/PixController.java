@@ -22,8 +22,8 @@ public class PixController {
     @Autowired
     PixKeyMapper pixKeyMapper;
     @PostMapping()
-    public ResponseEntity<PixKeyResponseDto> createPixKey(@RequestBody @Valid PixKey pixKey){
-        PixKey pixKeyCreated =pixServices.createPixKey(pixKey);
+    public ResponseEntity<PixKeyResponseDto> createPixKey(@RequestBody @Valid PixKeySaveDto pixKey){
+        PixKey pixKeyCreated =pixServices.createPixKey(pixKeyMapper.toEntity(pixKey));
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(pixKeyCreated.getKeyValue()).toUri();
         return ResponseEntity.created(location).body(pixKeyMapper.toResponseDto(pixKeyCreated));
     }

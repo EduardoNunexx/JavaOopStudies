@@ -23,6 +23,7 @@ public class BankAccountController {
     @Autowired
     BankAccountMapper bankAccountMapper;
     //TODO verify the create method, thinks about the way that you send just the user id instead the all the object
+    //TODO create the get all account transactions
     @PostMapping
     public ResponseEntity<BankAccountResponseDto> createBankAccount(@RequestBody @Valid BankAccountSaveDto bankAccount){
         BankAccount bankAccountCreated =bankAccountServices.createBankAccount(bankAccountMapper.toEntity(bankAccount));

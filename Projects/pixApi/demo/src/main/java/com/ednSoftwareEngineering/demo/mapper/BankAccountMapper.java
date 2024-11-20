@@ -20,9 +20,20 @@ public class BankAccountMapper {
         if(bankAccount.getPixKeys()!=null){
             pixKeys = bankAccount.getPixKeys().stream().map(pixKeyMapper::toResponseDto).toList();
         }
-        return new BankAccountResponseDto(bankAccount.getId(),pixKeys,bankAccount.getAccountBalance(),bankAccount.getAccountType(),bankAccount.getInstitutionName());
+        return new BankAccountResponseDto(
+                bankAccount.getId(),
+                pixKeys,bankAccount.getAccountBalance(),
+                bankAccount.getAccountType(),
+                bankAccount.getInstitutionName());
     }
     public BankAccount toEntity(BankAccountSaveDto bankAccountSave){
-        return new BankAccount(bankAccountSave.user(),bankAccountSave.pixKeys(),bankAccountSave.accountType(), bankAccountSave.accountBalance(), bankAccountSave.institutionName());
+        return new BankAccount(
+                bankAccountSave.user(),
+                bankAccountSave.pixKeys(),
+                bankAccountSave.accountType(),
+                bankAccountSave.accountBalance(),
+                bankAccountSave.institutionName(),
+                bankAccountSave.incomingTransactions(),
+                bankAccountSave.outgoingTransactions());
     }
 }
