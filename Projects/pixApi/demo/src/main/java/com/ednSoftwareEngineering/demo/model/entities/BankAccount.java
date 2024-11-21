@@ -26,10 +26,10 @@ public class BankAccount implements Serializable {
     private User user;
     @OneToMany(mappedBy = "bankAccount")
     private List<PixKey> pixKeys;
-    @OneToMany(mappedBy = "sourceAccount", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "sourceAccount", orphanRemoval = true)
     private List<Transactions> outgoingTransactions;
 
-    @OneToMany(mappedBy = "destinationAccount", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "destinationAccount", orphanRemoval = true)
     private List<Transactions> incomingTransactions;
     private Double accountBalance;
     @Enumerated(EnumType.STRING)

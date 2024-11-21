@@ -1,6 +1,7 @@
 package com.ednSoftwareEngineering.demo.model.services.implementation;
 
 import com.ednSoftwareEngineering.demo.enums.PixKeyType;
+import com.ednSoftwareEngineering.demo.exceptions.ResourceNotFoundException;
 import com.ednSoftwareEngineering.demo.model.entities.BankAccount;
 import com.ednSoftwareEngineering.demo.model.entities.PixKey;
 import com.ednSoftwareEngineering.demo.model.entities.User;
@@ -17,7 +18,6 @@ public class PixServiceImpl implements PixServices {
     public PixKey createPixKey(PixKey pixKey) {
         return pixKeyRepository.save(pixKey);
     }
-
     @Override
     public Double receivePix(PixKey pixKey, Double amount) {
         return null;
@@ -41,5 +41,15 @@ public class PixServiceImpl implements PixServices {
     @Override
     public PixKey associatePixKeyToAccount(PixKey pixKey, BankAccount bankAccount) {
         return null;
+    }
+
+    @Override
+    public PixKey findPixKeyByKeyValue(String keyValue) {
+        return pixKeyRepository.findByKeyValue(keyValue).orElseThrow(()-> new ResourceNotFoundException("Haven't accounts with this pix key "));
+    }
+
+    @Override
+    public BankAccount findBankAccountByPixKeyValue(String keyValue) {
+        return findPixKeyByKeyValue(keyValue).getBankAccount();
     }
 }

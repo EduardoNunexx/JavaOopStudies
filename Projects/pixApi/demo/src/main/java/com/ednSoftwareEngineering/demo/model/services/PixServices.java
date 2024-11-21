@@ -11,5 +11,7 @@ public interface PixServices {
     public PixKey generateRandomPixKey(BankAccount bankAccount);
     public Boolean validatePixKey(PixKey pixKey);
     public PixKey associatePixKeyToAccount(PixKey pixKey, BankAccount bankAccount);
-
+    public PixKey findPixKeyByKeyValue(String keyValue);
+    //ver se isso deveria ficar aqui ou na service de bank account
+    public BankAccount findBankAccountByPixKeyValue(String keyValue);
 }
